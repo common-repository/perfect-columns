@@ -1,0 +1,98 @@
+/*
+Global Box-Sizing
+This takes care of the width when you add padding the width will stay the same
+This works for IE8 and up. Firefox still needs -moz
+*/
+*,
+*:after,
+*:before {
+  -moz-box-sizing:border-box;
+  box-sizing:border-box;
+  -webkit-font-smoothing:antialiased;
+  font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/*------------------------------------*\
+    *EQUAL COLUMNS by Alex Kuttner
+
+    Basic layout (always clear the parent).
+    Never add to many columns causing them to float down, it will screw up the layout
+    <div class="p-row clear-fix">
+      <div class="p-col-6"></div>
+      <div class="p-col-6"></div>
+    </div>
+\*------------------------------------*/
+
+.clear-fix:before,
+.clear-fix:after {
+  content:"";
+  display:table;
+}
+
+.clear-fix:after {
+  clear:both;
+}
+.clear-fix {
+  *zoom:1;
+}
+
+//Change this these two values to change the padding between columns
+@col-spacing-negative: -1.5%;
+@col-spacing-positive: 1.5%;
+
+// The grid is always needed to enclose any columns it removes the the two variables @col-spacing-negative and @col-spacing-positive
+// on the first and last columns
+.p-row {
+  max-width: 5000px; //As long as this is larger than the actual container then you will be okay!
+  margin-right: @col-spacing-negative;
+  margin-left: @col-spacing-negative;
+}
+
+.p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12 {
+  float: left;
+  padding: 0 @col-spacing-positive 0 @col-spacing-positive;
+}
+
+@x: 8.33%; // 8.33 x 12 equals 99.96 leaves us with a gap of .04% who cares??
+
+.p-col-1 { width: @x; }
+.p-col-2 { width: @x*2; }
+.p-col-3 { width: @x*3; }
+.p-col-4 { width: @x*4; }
+.p-col-5 { width: @x*5; }
+.p-col-6 { width: @x*6; }
+.p-col-7 { width: @x*7; }
+.p-col-8 { width: @x*8; }
+.p-col-9 { width: @x*9; }
+.p-col-10 { width: @x*10; }
+.p-col-11 { width: @x*11; }
+.p-col-12 { width: @x*12; }
+
+//Fills in the tiny .04% gap!
+[class*='p-col-']:first-of-type {
+    margin-left: .02%;
+}
+.p-row > [class*='p-col-']:last-of-type {
+    margin-right: .02%;
+}
+
+.p-col-1 img, .p-col-2 img, .p-col-3 img, .p-col-4 img, .p-col-5 img, .p-col-6 img, .p-col-7 img, .p-col-8 img, .p-col-9 img, .p-col-10 img, .p-col-11 img, .p-col-12 img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+
+
+@media only screen and (max-width:768px) {
+  .p-row {
+    margin-right:0;
+    margin-left:0;
+  }
+  .p-col-1, .p-col-2, .p-col-3, .p-col-4, .p-col-5, .p-col-6, .p-col-7, .p-col-8, .p-col-9, .p-col-10, .p-col-11, .p-col-12 {
+    float: none;
+    padding: 0;
+    width: 100%;
+    clear: both;
+  }
+}

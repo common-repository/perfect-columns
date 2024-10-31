@@ -1,0 +1,143 @@
+/*
+Global Box-Sizing
+This takes care of the width when you add padding the width will stay the same
+This works for IE8 and up. Firefox still needs -moz
+*/
+/*
+Global Box-Sizing
+This takes care of the width when you add padding the width will stay the same
+This works for IE8 and up. Firefox still needs -moz
+*/
+*,
+*:after,
+*:before {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+/*------------------------------------*\
+    *EQUAL COLUMNS by Alex Kuttner
+
+    Basic layout (always clear the parent).
+    Never add to many columns causing them to float down, it will screw up the layout
+    <div class="p-row clear-fix">
+      <div class="p-col-6"></div>
+      <div class="p-col-6"></div>
+    </div>
+\*------------------------------------*/
+.clear-fix:before,
+.clear-fix:after {
+  content: "";
+  display: table;
+}
+.clear-fix:after {
+  clear: both;
+}
+.clear-fix {
+  *zoom: 1;
+}
+.p-row {
+  max-width: 5000px;
+  margin-right: -1.5%;
+  margin-left: -1.5%;
+}
+.p-col-1,
+.p-col-2,
+.p-col-3,
+.p-col-4,
+.p-col-5,
+.p-col-6,
+.p-col-7,
+.p-col-8,
+.p-col-9,
+.p-col-10,
+.p-col-11,
+.p-col-12 {
+  float: left;
+  padding: 0 1.5% 0 1.5%;
+}
+.p-col-1 {
+  width: 8.33%;
+}
+.p-col-2 {
+  width: 16.66%;
+}
+.p-col-3 {
+  width: 24.990000000000002%;
+}
+.p-col-4 {
+  width: 33.32%;
+}
+.p-col-5 {
+  width: 41.65%;
+}
+.p-col-6 {
+  width: 49.980000000000004%;
+}
+.p-col-7 {
+  width: 58.31%;
+}
+.p-col-8 {
+  width: 66.64%;
+}
+.p-col-9 {
+  width: 74.97%;
+}
+.p-col-10 {
+  width: 83.3%;
+}
+.p-col-11 {
+  width: 91.63%;
+}
+.p-col-12 {
+  width: 99.96000000000001%;
+}
+[class*='p-col-']:first-of-type {
+  margin-left: .02%;
+}
+.p-row > [class*='p-col-']:last-of-type {
+  margin-right: .02%;
+}
+.p-col-1 img,
+.p-col-2 img,
+.p-col-3 img,
+.p-col-4 img,
+.p-col-5 img,
+.p-col-6 img,
+.p-col-7 img,
+.p-col-8 img,
+.p-col-9 img,
+.p-col-10 img,
+.p-col-11 img,
+.p-col-12 img {
+  width: auto;
+  height: auto;
+  display: block;
+}
+@media only screen and (max-width: 768px) {
+  .p-row {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .p-col-1,
+  .p-col-2,
+  .p-col-3,
+  .p-col-4,
+  .p-col-5,
+  .p-col-6,
+  .p-col-7,
+  .p-col-8,
+  .p-col-9,
+  .p-col-10,
+  .p-col-11,
+  .p-col-12 {
+    float: none;
+    padding: 0;
+    width: 100%;
+    clear: both;
+  }
+}
+
+/* This beautiful CSS-File has been crafted with LESS (lesscss.org) and compiled by simpLESS (wearekiss.com/simpless) */

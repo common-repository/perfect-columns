@@ -1,0 +1,51 @@
+=== Perfect Columns ===
+Contributors: moto_485
+Tags: shortcode, columns, grid, mobile, rows
+Requires at least: 3.9
+Tested up to: 3.9.1
+License: GPLv2
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Add shortcodes to easily create up to 12 equal columns in your pages and posts
+
+== Description ==
+If you need two, three or more columns of text or images and need them to be exactly the same using on CSS3 then this is it.
+
+First insert a [row] shortcode (this needs to wrap around every new row) then add the Columns until you have added up to 12.
+
+Example:
+[row]
+[p-col-3]
+Content Here
+[/p-col-3]
+[p-col-3]
+Content Here
+[/p-col-3]
+[p-col-3]
+Content Here
+[/p-col-3]
+[p-col-3]
+Content Here
+[/p-col-3]
+[/row]
+
+These rows will collapse for mobile devices.
+
+Feel free to over write the style sheet in your themes style and be confident that any classes will never change names.
+
+== Installation ==
+1. Upload perfect-columns to the /wp-content/plugins/ directory
+2. Activate Perfect Columns through the \'Plugins\' menu in WordPress
+3. A row of buttons will be added to the top of the WYSIWYG editor.
+4. With every row first click on the [R] then click then numbers adding up to a total of 12 then create a new row
+
+== Frequently Asked Questions ==
+
+== Screenshots ==
+
+== Changelog ==
+
+= 0.1 =
+Initial release
+
+== Upgrade Notice ==
